@@ -1,0 +1,14 @@
+<!--  ./views/left.erb -->
+            <div class="left">
+                <div class="categoryname">
+                    <a class="category" href="/">Категории</a>
+                </div>
+                <div>
+                    <ul>
+                        <% @categories.each do |item| %>
+                        <li><a class="category" href="/categories/<%= item['category_id'] %>"><%= item['category'] %></a></li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+<!--  ./views/left.erb -->

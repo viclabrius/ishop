@@ -1,0 +1,36 @@
+<!--  ./views/productinfo.erb -->
+            <div class="center">
+                <div class="productinfo-main">
+                    <% @products.each do |item| %>
+                    <% if File.file?("#{Dir.pwd}/public/shopimages/#{item['image']}") %>
+
+                    <div class="productinfo-boxabs">
+                        <div class="preview-box-flex">
+                            <a href="/preview/<%= item['product_id'] %>"><img class="preview-img" src="/shopimages/<%= item['image'] %>" alt="<%= item['name'] %>"></a>
+                        </div>
+                    </div>
+                    <% end %>
+
+                    <div class="productinfo-info">
+                        <div class="productname">Название: <%=item['name'] %> </div>
+                        <div>Категория: <%=item['category'] %> </div>
+                        <div class="productdescr">
+                            <p class="productdescr">Описание:<br><%=item['description'] %> </p>
+                        </div>
+                        <div class="productdescr">
+                        <p>Цена: <%=item['price'] %> </p>
+                        <p>Количество: <%=item['count'] %> </p>
+                        <% if item['count'] >0 %>
+                        <p>
+                            <a class="productinfo-link-buy" href="/cart/<%=item['product_id'] %>"><button>В корзину</button></a>
+                            <a class="productinfo-link-buy" href="/buy/<%=item['product_id'] %>"><button>Купить</button></a>
+                        </p>
+                        <% end %>
+                        </div>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+<!--  ./views/productinfo.erb -->
+
+

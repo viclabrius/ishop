@@ -1,0 +1,16 @@
+<!--  ./views/preview.erb -->
+            <div class="center">
+                <div class="preview-box">
+                    <div class=".preview-box-flex" >
+                        <% @products.each do |item| %>
+                        <% if File.file?("#{Dir.pwd}/public/shopimages/#{item['image']}") %>
+                        <img class="preview-img" src="/shopimages/<%= item['image'] %>" alt="<%= item['name'] %>">
+                        <% end %>
+                        <% end %>
+                    </div>
+                    <div class="preview-link" >
+                      <a href="<%= request.referer %>">Назад</a>
+                    </div>
+                </div>
+            </div>
+<!--  ./views/preview.erb -->

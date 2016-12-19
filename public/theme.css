@@ -1,0 +1,311 @@
+
+body{ font: 13px Arial, sans-serif; }
+
+.header {
+    height: 100px;
+    width: 100%;
+    background: darkkhaki url("images/header3.png") repeat-x;
+    position: relative;
+}
+
+.footer {
+    height: 40px;
+    width: 100%;
+    background: darkkhaki;
+}
+
+.middle {
+    height: 500px;
+    /*height: 100%;*/
+    width: 100%;
+    display: flex;
+}
+
+.left {
+    width: 200px;
+    background: #cccc99
+}
+
+.center {
+    width: 100%;
+    height: 100%;
+    background-image: url("images/center4.jpg");
+    background-repeat: repeat, space;
+    overflow:auto;
+    /*background-size: cover;*/
+    /*display: flex;*/
+    /*flex-flow: row wrap;*/
+    /*flex-direction: column;*/
+}
+
+.product {
+    width: 120px;
+    height: 160px;
+    background: cadetblue;
+    margin: 5px;
+    padding: 10px;
+    border: solid 2px darkturquoise;
+    float: left;
+    position: relative;
+    /* задаем относительное позиционирование, чтобы можно было дочерние div позиционировать абсолютно, но относительно родительского (этого) div*/
+}
+
+a.category {
+    text-decoration: none;
+    color: maroon;
+}
+
+a.category:hover {
+    text-decoration: none;
+    color: maroon;
+}
+
+a.items {
+    text-decoration: none;
+    color: yellow;
+}
+
+a.items:hover {
+    text-decoration: none;
+    color: yellow;
+}
+
+.cartclick {
+    position: absolute;
+    margin-left: 25px;
+    bottom: 2px;
+}
+
+
+.categoryname {
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.topsign {
+    font-weight: bold;
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    right: 10px;
+    bottom: 3px;
+    position: absolute;
+}
+.topadmin{
+    font-weight: bold;
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    right: 150px;
+    bottom: 3px;
+    position: absolute;
+}
+.topadminbuys{
+    font-weight: bold;
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    right: 300px;
+    bottom: 3px;
+    position: absolute;
+}
+
+.topcart {
+    font-weight: bold;
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+    left: 5px;
+    bottom: 3px;
+    position: absolute;
+}
+.headerlink {
+    font-weight: bold;
+    font-size: 26pt;
+    text-decoration: none;
+    color: lightgoldenrodyellow;
+
+}
+.headername {
+    width: 600px;
+    position: absolute;
+    top: 40%;
+    margin-top: -0.625em;
+    left: 30%;
+}
+
+.footertext {
+    text-align: center;
+    padding: 10px;
+}
+/* ---------Login, Registration------------*/
+#login-box{
+    background: #cccc99;
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    position: relative;
+}​
+
+#login-box h3{
+    text-align: center;
+    /*height: 40px;*/
+    line-height: 40px;
+    border-bottom: 1px solid #ddd;
+    font-size: 20px;
+    color: #414141;
+    margin: 10px;
+}
+
+#login-form{
+    padding: 20px 25px;
+    border-top: 1px solid #fff;
+}
+
+.loginform{
+    width: 55%;
+    margin-right: auto;
+    auto;margin-left: auto;
+}
+.loginregister {
+    width: 75%;
+    margin: auto;
+}
+/* ---------Login, Registration------------*/
+/*----------кнопки---------------*/
+input {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 2px 2px;
+    text-align: center;
+}
+
+button {
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    padding: 2px 2px;
+    text-align: center;
+}
+/*----------кнопки---------------*/
+td {
+ /*border: 1px darkhakki solid;*/
+ /*padding: 0.2em; */
+/* text-align: center;*/
+}
+/*----productinfo--------*/
+.productinfo-main{
+    width: 650px;
+    /*height: 350px;*/
+    left:25%;
+    margin-top: 30px;
+    padding: 5px;
+    background: #cccc99;
+    border: solid 2px #ccc;
+    float: left;
+    position: relative;
+    overflow:auto;
+}
+.productinfo-info{
+    width: 450px;
+    /*height: 300px;*/
+    left:165px;
+    margin-top: 15px;
+    padding: 5px;
+    border: solid 2px #C6C294;
+    float: left;
+    position: relative;
+    overflow:auto;
+}
+
+.productinfo-boxabs{
+    width:150px;
+    height: 150px;
+    background: #fff;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    position: absolute;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.product-thumb{
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border: 1px solid #cecece;
+    border-radius: 3px;
+    position: absolute;
+    margin-top: 3px;
+    margin-left: 25px;
+    padding: 2px;
+    bottom: 2em;
+}
+
+
+.productdescr {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 12pt;
+    text-align: justify;
+    font-weight: lighter;
+    width: 450px;
+}
+
+.productname {
+    font-weight: bold;
+    color: maroon;
+}
+
+.productinfo-link-buy{
+    margin-left:10px auto;
+}
+.productinfo-link-cart{
+    margin-right:10px auto;
+}
+
+/* ----------preview--------------*/
+.preview-box{
+    width: 450px;
+    height: 450px;
+    background: #cccc99;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    position: absolute;
+    margin: 20px auto;
+    left: 40%;
+}
+
+.preview-box-flex{
+    width: 90%;
+    height: 90%;
+    border: 1px solid #cecece;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+.preview-img{
+    max-width: none;
+    min-width: auto;
+    min-height: auto;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.preview-link{
+    width: 100%;
+    /*border: 1px solid #cecece;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100%;
+}
+/* ----------preview--------------*/

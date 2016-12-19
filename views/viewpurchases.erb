@@ -1,0 +1,53 @@
+<!--  ./views/viewpurchases.erb -->
+            <div class="center">
+              <div style="margin-left: 360px;margin-top: 20px;">
+                <table border=1 cellspacing="0">
+                  <caption><b>Таблица всех совершенных покупок</b></caption>
+                  <thead>
+                    <tr bgcolor="darkkhaki">
+                      <th>ID</th>
+                      <th>Имя товара</th>
+                      <th>Категория</th>
+                      <th>Цена</th>
+                      <th>Кол-во</th>
+                      <th>Сумма</th>
+                      <th>Кто купил</th>
+                      <th>Дата покупки</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% if @db.length > 0 %>
+                  <%  olddate=@db[0]['datetime']; color='#cccc99' %>
+                  <% else %>
+                  <%  olddate=Time.now.to_i %>
+                  <% end %>
+                  <% sum=0;sumcount=0;count=0 %>
+                  <% @db.each do |item| %>
+                    <% if item['datetime'] != olddate %>
+                      <% if color=="#cccc99" %>
+                        <% color="darkseagreen" %>
+                      <% else %>
+                        <% color="#cccc99" %>
+                      <% end %>
+                    <% end %>
+                    <tr bgcolor="<%= color %>">
+                      <td><%= item['product_id'] %></td>
+                      <td><b><%= item['name'] %></b></td>
+                      <td><%= item['category'] %></td>
+                      <td><%= item['price'] %></td>
+                      <td align="center"><%= item['count'] %></td>
+                      <td><%= item['count']*item['price'] %></td>
+                      <td><%= item['username'] %></td>
+                      <td><%= Time.at(item['datetime']).strftime("%T  %m.%d.%Y") %></td>
+                    </tr>
+                    <% sum+=item['price'];sumcount+=item['count']*item['price'];count+=item['count'] %>
+                    <% olddate=item['datetime'] %>
+                  <% end %>
+                    <tr bgcolor="#cccc99">
+                      <th colspan="3" align="right">Итого сумма:</th><th><%= sum %></th><th><%= count %></th><th><%= sumcount %></th><th colspan="3"></th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+<!--  ./views/viewpurchases.erb -->

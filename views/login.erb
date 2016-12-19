@@ -1,0 +1,38 @@
+<!--  ./views/login.erb -->
+            <div class="center">
+            <div id="login-box">
+              <h3>
+                Для того, чтобы можно было добавлять товары в корзину и совершать покупки, необходима авторизация на сайте
+              </h3>
+              <form id="login-form" action="/logincheck" method="post">
+                <div class="loginform">
+                  <table>
+                    <caption>Вход в магазин</caption>
+                    <thead>
+                      <tr>
+                        <th colspan="2">Введите имя пользователя и пароль:</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><label for="name">*Имя пользователя: </label></td>
+                        <td><input type="text" name="username" id="username" value="" tabindex="1" required size=12/></td>
+                      </tr>
+                      <tr>
+                        <td><label for="name">*Пароль: </label></td>
+                        <td><input type="password" name="password" id="password"" value="" tabindex="2" required size=12/></td>
+                      </tr>
+                      <tr>
+                        <td><input type="submit" value="Авторизоваться" /></td>
+                        <td><input type="reset" value="Очистить" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </form>
+              <div class="loginregister">
+                Если вы еще не зарегистированы в магазине, то пройдите <a href="/register">регистрацию</a>
+              </div>
+            </div>
+            </div>
+<!--  ./views/login.erb -->

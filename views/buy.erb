@@ -1,0 +1,25 @@
+<!--  ./views/pay.erb -->
+            <div class="center">
+              <div style="margin-left: 40px;">
+                <h3>Для оплаты выбранных товаров введите номер своей банковской карты:</h3>
+                <div><img src="/images/visa.jpg" width=300px height="170px"></div>
+                <div>
+                  <form action="/buy" method="post" accept-charset="utf-8">
+                  <label for="visa">Номер кредитной карты</label><br>
+                  <input type="text" name="visa" value="" required ><br>
+                  <label for="cvv">Защитный код CVV2</label><br>
+                  <input type="text" name="cvv" value=""  required ><br>
+                  <label for="address">Адрес доставки</label><br>
+                  <input type="text" name="address" value=""  required ><br>
+                  <label for="phone">Телефон для связи</label><br>
+                  <input type="text" name="phone" value=""  required ><br>
+                  <input type="submit" onSubmit="document.getElementById('train').style.display='block';" value="Оплатить" id="submit">
+                  <a href="<%= request.referer %>" onClick="return window.location='<%= request.referer %>'"><button>Назад</button></a>
+                  </form>
+                </div>
+                <div>
+                <img id="train" style="display:none; position: relative;cursor: pointer;width: 177px;height: 160px;left: 0; transition: left 5s cubic-bezier(0, 0, 1, 1);" src="https://js.cx/clipart/train.gif" onclick="this.style.left='450px'">
+                </div>
+              </div>
+            </div>
+<!--  ./views/pay.erb -->

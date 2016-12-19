@@ -1,0 +1,34 @@
+<!--  ./views/index.erb -->
+            <div class="center">
+                <% if @products.length == 0 %>
+                <div style="margin-left: 30%;margin-top: 10%;">
+                    <a href="/initdb" ><button>Инициализировать базу</button></a>
+                    <p>Встроенный административный аккаунт: admin<br>
+                    Пароль: admin</p>
+                </div>
+                <% end %>
+                <% @products.each do |item|%>
+                <div class="product">
+                    <a class="items" href="/product/<%= item['product_id'] %>">
+                        <div class="productname"><%= item['name'] %></div>
+                        <div>Цена: <%= item['price'] %></div>
+                        <div>Кол.: <%= item['count'] %></div>
+                    </a>
+                    <div class="product-thumb">
+                        <div class="preview-box-flex">
+                            <a href="/product/<%= item['product_id']  %>">
+                            <% if File.file?("#{Dir.pwd}/public/shopimages/#{item['image']}") %>
+                            <img class="preview-img" src="/shopimages/<%= item['image'] %>" alt="<%= item['name'] %>">
+                            <% end %>
+                            </a>
+                        </div>
+                    </div>
+                    <% if item['count'] > 0 %>
+                    <a class="items" href="/cart/<%= item['product_id'] %>" >
+                        <div class="cartclick">В корзину</div>
+                    </a>
+                    <% end %>
+                </div>
+                <% end %>
+            </div>
+<!--  ./views/index.erb -->

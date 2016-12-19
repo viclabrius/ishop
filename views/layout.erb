@@ -1,0 +1,43 @@
+<!--  ./views/layout.erb -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Мой первый сайт</title>
+    <link rel="stylesheet" type="text/css" href="/theme.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="headername" >
+                 <a class="headerlink" href="/">Магазин Новогодней Распродажи</a>
+            </div>
+            <div>
+                <% unless session['cart'].nil? %>
+                <a class="topcart" href="/cart">Корзина(<%= session['cart'].values.inject(0){ |sum, item| sum + item } %>) </a>
+                <% end %>
+
+                <% if session['userid'].nil? %>
+                <a class="topsign" href="/login"> ВХОД </a>
+                <% else %>
+                <a class="topsign" href="/logout"><%= session['userid'] %> ВЫХОД </a>
+                    <% if session['userid'] == "admin" %>
+                        <a class="topadmin" href="/admin">ADMIN Database </a>
+                        <a class="topadminbuys" href="/viewpurchases">View all Purchases </a>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+        <div class="middle">
+            <%= erb :left %>
+            <%= yield %>
+        </div>
+        <div class="footer">
+            <div class="footertext">
+                Copyright (c) 2016 All rights reserved. Design by: Фадюков Александр Дмитриевич
+            </div>
+        </div>
+    </div>
+</body>

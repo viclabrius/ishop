@@ -1,0 +1,43 @@
+<!--  ./views/registration.erb -->
+            <div class="center">
+            <div id="login-box">
+              <form action="/register" method="post">
+                <div class="loginform">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th colspan="2">Данные для регистрации</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="2">Введите имя пользователя и пароль:</td>
+                      </tr>
+                      <tr>
+                        <td><label for="name">*Имя пользователя: </label></td>
+                        <td><input type="text" name="username" id="username" value="" tabindex="1" required /></td>
+                      </tr>
+                      <tr>
+                        <td><label for="name">*Пароль: </label></td>
+                        <td><input type="password" name="password" id="password"" value="" tabindex="2" required /></td>
+                      </tr>
+                      <tr>
+                        <td><label for="name">*Проверка пароля: </label></td>
+                        <td><input type="password" name="password" id="password"" value="" tabindex="3" required /></td>
+                      </tr>
+                      <tr>
+                        <td><label for="name">*E-mail: </label></td>
+                        <td><input type="text" name="email" id="email"" value="" tabindex="4" required /></td>
+                      </tr>
+                      <tr>
+                        <td><input type="submit" value="Зарегистрироваться" /></td>
+                        <td><input type="reset" value="Очистить" /></td>
+                        <td><a href="<%= request.referer %>" onClick="return window.location='/'"><button>выход</button></a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </form>
+            </div>
+            </div>
+<!--  ./views/registration.erb -->

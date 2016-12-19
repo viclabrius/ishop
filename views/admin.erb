@@ -1,0 +1,83 @@
+<!--  ./views/admin.erb -->
+            <div class="center">
+              <div style="margin: 50px; padding: 10px; width: 600px; border: 1px solid gray;">
+              <!-- Форма удаления товара -->
+              <form id="selectproduct" action="/admin" method="post" accept-charset="utf-8">
+                <fieldset>
+                <legend><h3>Удаление товара из базы</h3></legend>
+                <div>
+                  <label for="product">Выберите товар</label><br>
+                  <input type="hidden" name="action" value="delproduct"/>
+                  <select name="product" id="product">
+                      <option value=""></option>
+                      <% @products.each do |item|%>
+                      <option value="<%= item['product_id'] %>"><%= item['name'] %></option>
+                      <% end %>
+                  </select>
+                  <input type="submit" value="удалить выбранный товар из базы"/>
+                </div>
+                </fieldset>
+              </form>
+
+              <!-- Форма добавления новой категории -->
+                <form id="addcat" action="/admin" method="post" accept-charset="utf-8">
+                  <fieldset>
+                  <legend><h3>Добавление новой категории в список категорий</h3></legend>
+                  <div>
+                    <label for="category">Название новой категории:</label><br>
+                    <input type="text" name="category" value="" />
+                    <input type="hidden" name="action" value="newcategory"/>
+                    <input type="submit" value="Добавить"/>
+                  </div>
+                  </fieldset>
+                </form>
+
+                <!-- Форма добавления нового товара -->
+                <form id="addproduct" name="addproduct" action="/admin" method="post" accept-charset="utf-8" enctype='multipart/form-data'>
+                  <fieldset>
+                  <legend><h3>Завести в базе новый товар:</h3></legend>
+                  <input type="hidden" id="action" name="action" value="add"/>
+                  <div>
+                    <label for="name">Название товара:</label><br>
+                    <input type="text" name="name" id="name" value="" tabindex="2"  required />
+                  </div>
+                  <br>
+                  <div >
+                    <label for="categories">Список категорий:</label><br>
+                    <select name="category" id="categories"  required >
+                      <% @categories.each do |item|%>
+                      <option value="<%= item['category_id'] %>"><%= item['category'] %></option>
+                      <% end %>
+                    </select>
+                    <a href="#" onClick="document.getElementById('action').value='delcategory';document.getElementById('addproduct').submit(); return false;">Удалить категорию</a>
+                  </div>
+                  <br>
+                  <div>
+                    <label for="description">Описание товара:</label><br>
+                    <textarea cols="40" rows="8" name="description" id="textarea" tabindex="3"  required></textarea>
+                  </div>
+                  <br>
+                  <div>
+                    <label for="count">Количество:</label><br>
+                    <input type="text" name="count" id="count" value="" tabindex="4" required />
+                  </div>
+                  <br>
+                  <div>
+                    <label for="price">Цена:</label><br>
+                    <input type="text" name="price" id="price" value="" tabindex="5" required />
+                  </div>
+                  <br>
+                  <div>
+                  <label for="image">Картинка:</label><br>
+                  <input type="file" name="image" value="" placeholder="Выберите файл картинки для товара"  required >
+                  </div>
+                  <br>
+                  <div>
+                    <input type="submit" value="Добавить" />
+                    <input type="reset" value="Очистить" />
+                  </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+<!--  ./views/admin.erb -->
